@@ -9,8 +9,8 @@ void fragment() {
 	vec4 currentColor = texture(TEXTURE, UV);
 	COLOR = currentColor;
 	if (currentColor.r > 0.4) {
-		float offset = (2.0*3.14*UV.x) * 0.4;
-		float whiteFactor = max(currentColor.r, 0.9);
+		float offset = (2.0*3.14*UV.x) * 0.8;
+		float whiteFactor = max(currentColor.r, 0.0);
 		COLOR = vec4(whiteFactor*abs(cos(TIME*speed + offset))*1.0, whiteFactor*abs(sin(TIME*speed + offset)), whiteFactor*abs(cos(TIME*speed+1.9 + offset))*1.0, currentColor.a);
 	}
 }"

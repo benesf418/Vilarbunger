@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://game/game.gd" type="Script" id=1]
 [ext_resource path="res://game/score/score.tscn" type="PackedScene" id=2]
@@ -7,9 +7,13 @@
 [ext_resource path="res://game/level/1_room/front_panel_2.png" type="Texture" id=5]
 [ext_resource path="res://game/level/1_room/front_panel_3.png" type="Texture" id=6]
 [ext_resource path="res://game/level/1_room/keyboard.png" type="Texture" id=7]
-[ext_resource path="res://game/level/1_room/rgb_material.tres" type="Material" id=8]
+[ext_resource path="res://game/level/1_room/rgb.tres" type="Material" id=8]
 [ext_resource path="res://game/level/1_room/mousepad.png" type="Texture" id=9]
 [ext_resource path="res://game/level/1_room/mouse.png" type="Texture" id=10]
+[ext_resource path="res://game/level/1_room/monitor.png" type="Texture" id=11]
+[ext_resource path="res://game/level/1_room/delobracho.jpg" type="Texture" id=12]
+[ext_resource path="res://game/level/1_room/monitor_light.gd" type="Script" id=13]
+[ext_resource path="res://game/level/1_room/monitor_light.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -36,6 +40,7 @@ centered = false
 position = Vector2( 1416.88, 996 )
 scale = Vector2( 1.53767, 1.4375 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Mousepad" type="Sprite" parent="Level/Room"]
@@ -52,3 +57,20 @@ texture = ExtResource( 7 )
 material = ExtResource( 8 )
 position = Vector2( 1088, 710 )
 texture = ExtResource( 10 )
+
+[node name="Monitor" type="Sprite" parent="Level/Room"]
+position = Vector2( 954, 386 )
+texture = ExtResource( 11 )
+
+[node name="Wallpaper" type="Sprite" parent="Level/Room/Monitor"]
+position = Vector2( -2.00002, -15.25 )
+scale = Vector2( 1.625, 0.984375 )
+texture = ExtResource( 12 )
+
+[node name="Light2D" type="Light2D" parent="Level/Room/Monitor"]
+position = Vector2( -1.00001, 17 )
+scale = Vector2( 1.004, 1.08 )
+texture = ExtResource( 14 )
+color = Color( 0.72549, 0.94902, 0.996078, 1 )
+energy = 0.2
+script = ExtResource( 13 )
