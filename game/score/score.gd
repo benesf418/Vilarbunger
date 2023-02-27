@@ -11,7 +11,7 @@ func displayScore():
 
 func addScore(amount : int):
 	score += amount
+	displayScore()
 	var addedScore = addedScoreScene.instance()
 	addedScore.setAddedAmount(amount)
 	add_child(addedScore);
-	displayScore()

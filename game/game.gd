@@ -12,5 +12,5 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey:
 		if event.scancode == KEY_A && !aPressed:
-			$Score.addScore(5)
+			$Score.addScore(10)
 			aPressed = true
